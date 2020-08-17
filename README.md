@@ -5,7 +5,7 @@
 ```js
 <script>
 window.$docsify = {
-	autoFooter: {
+    autoFooter: {
 		name:		'',
 		url:		'',
 		copyYear:	'',
@@ -54,15 +54,26 @@ Fill in the data within the configuration, and it will all auto populate.
 
 # Contributing
 1. Clone the repo:
-```
-git clone https://github.com/markbattistella/docsify-sidebarFooter.git
-```
+	```
+	git clone https://github.com/markbattistella/docsify-sidebarFooter.git
+	```
 
-2. Create your feature branch: `git checkout -b my-feature`
+2. Create your feature branch:
+	```
+	git checkout -b my-feature
+	```
 
-3. Commit your changes: `git commit -am 'Add some feature'`
+3. Commit your changes:
 
-4. Push to the branch: `git push origin my-new-feature`
+	```
+	git commit -am 'Add some feature'
+	```
+
+4. Push to the branch:
+
+	```
+	git push origin my-new-feature
+	```
 
 5. Submit a `pull` request
 
