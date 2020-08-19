@@ -1,27 +1,30 @@
 {
-  "name": "mbdocsify-sidebarfooter",
-  "version": "1.0.2",
-  "description": "Add a footer notice for Docsify.js",
-  "main": "docsify-sidebarFooter.min.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/markbattistella/docsify-sidebarFooter.git"
-  },
-  "keywords": [
-    "footer",
-    "copyright",
-    "privacy",
-    "terms of service",
-    "docsify",
-    "plugin"
-  ],
-  "author": "Mark Battistella",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/markbattistella/docsify-sidebarFooter/issues"
-  },
-  "homepage": "https://github.com/markbattistella/docsify-sidebarFooter#readme"
+	"name": "mbdocsify-sidebarfooter",
+	"version": "1.0.3",
+	"description": "Add a footer notice for Docsify.js",
+	"main": "docsify-sidebarFooter.min.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/markbattistella/docsify-sidebarFooter.git"
+	},
+	"publishConfig": {
+		"registry": "https://npm.pkg.github.com/"
+	},
+	"keywords": [
+		"footer",
+		"copyright",
+		"privacy",
+		"terms of service",
+		"docsify",
+		"plugin"
+	],
+	"author": "Mark Battistella",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/markbattistella/docsify-sidebarFooter/issues"
+	},
+	"homepage": "https://github.com/markbattistella/docsify-sidebarFooter#readme"
 }
