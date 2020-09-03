@@ -5,33 +5,45 @@
 ```js
 <script>
 window.$docsify = {
-    autoFooter: {
-		name:		'',
-		url:		'',
-		copyYear:	'',
-		policy:		'',
-		terms:		''
-	}
+  autoFooter: {
+    name:     '',
+    url:      '',
+    copyYear: '',
+    policy:   '',
+    terms:    ''
+  }
 };
 </script>
 ```
 
-2. Insert script into docsify document:
+### via npm
+Including it via NPM has one extra step than a normal:
+
+```sh
+npm install @markbattistella/docsify-sidebarfooter@1.1.5 --registry="https://npm.pkg.github.com/"
+```
+
+
+1. Insert script into docsify document:
 ```js
 <script src="docsify-sidebarFooter.js"></script>
 ```
 
-3. If you are using the Privacy Policy and Terms of Service links, then add the two files to the root (next to `index.html`)
+
+1. If you are using the Privacy Policy and Terms of Service links, then add the two files to the root (next to `index.html`)
 
 	```
-	| docs
+	| docs/
 	|-- _privacy.md
 	|-- _terms.md
 	```
 
-4. Add the `<div id="mb-footer"></div>` to the bottom of the `_sidebar.md`. I guess you can add this anywhere, but it's designed for the sidebar.
 
-5. Find a couple of online generators to help fill in the data :smiley:
+1. Add the `<div id="mb-footer"></div>` to the bottom of the `_sidebar.md`. I guess you can add this anywhere, but it's designed for the sidebar.
+
+
+1. Find a couple of online generators to help fill in the data :smiley:
+
 
 
 ## Configuration
@@ -45,6 +57,7 @@ There are some options available for the `docsify-autoHeaders`:
 | policy	| do you have a Privacy Policy page
 | terms		| do you have a Terms of Service page
 
+
 ## Usage
 Fill in the data within the configuration, and it will all auto populate.
 
@@ -54,36 +67,15 @@ Fill in the data within the configuration, and it will all auto populate.
 
 # Contributing
 1. Clone the repo:
-	```
-	git clone https://github.com/markbattistella/docsify-sidebarFooter.git
-	```
+`git clone https://github.com/markbattistella/docsify-sidebarFooter.git`
 
-2. Create your feature branch:
-	```
-	git checkout -b my-feature
-	```
+1. Create your feature branch:
+`git checkout -b my-feature`
 
-3. Commit your changes:
+1. Commit your changes:
+`git commit -am 'Add some feature'`
 
-	```
-	git commit -am 'Add some feature'
-	```
+1. Push to the branch:
+`git push origin my-new-feature`
 
-4. Push to the branch:
-
-	```
-	git push origin my-new-feature
-	```
-
-5. Submit a `pull` request
-
-
----
-
-# Author: [@me](https://github.com/markbattistella)
-
-- 🔭 I’m currently working on some secret projects
-- 🌱 I’m learning
-- 📫 Reach me: [Twitter 🐦](https://twitter.com/markbattistella)
-
----
+1. Submit a `pull` request
