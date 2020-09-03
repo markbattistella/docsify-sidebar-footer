@@ -35,7 +35,7 @@ const footerOptions = {
 function autoFooter( hook, vm ) {
 
 	// after initial completion
-	hook.ready(function() {
+	hook.doneEach(function() {
 
 		// get the variables from the cofig
 		const	footerOptionsArray = getFooter( footerOptions ),
