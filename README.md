@@ -1,3 +1,7 @@
+![npm Publish](https://github.com/markbattistella/docsify-sidebarfooter/workflows/npm%20Publish/badge.svg?event=registry_package)
+
+---
+
 # Getting started
 
 ## Installation
