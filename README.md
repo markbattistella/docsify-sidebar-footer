@@ -1,57 +1,45 @@
-![npm Publish](https://github.com/markbattistella/docsify-sidebarfooter/workflows/npm%20Publish/badge.svg?event=registry_package)
+# docsify-sidebarfooter: Auto numbering body headings
 
----
+![npm Publish](https://github.com/markbattistella/docsify-sidebarfooter/workflows/npm%20Publish/badge.svg?event=registry_package) ![npm (tag)](https://img.shields.io/npm/v/docsify-sidebarfooter/latest) ![GitHub](https://img.shields.io/github/license/markbattistella/docsify-sidebarfooter) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/docsify-sidebarfooter)
 
-# Getting started
+This plugin is designed to create a footer area at the base of your sidebar where you can list a copyright year, your name or company with a URL, and links to a privacy policy and terms of service.
+
 
 ## Installation
-1. Configure the `docsify-autoFooter`:
+
+### 1. Update `index.html` file
+Assuming you have a working [docsify](https://docsify.js.org/) app set up, it is easy to use the plugin.
+
+1. Add the following script tag to your `index.html` via either CDN or downloading it and using it locally:
+
+```html
+<!-- unpkg.com -->
+<script src="https://unpkg.com/docsify-sidebarfooter"></script>
+
+<!-- jsDelivr -->
+<script src="https://cdn.jsdelivr.net/npm/docsify-sidebarfooter"></script>
+
+<!-- locally -->
+<script src="docsify-sidebarfooter.js"></script>
+```
+
+1. In docsify setup configure the plugin:
+
 ```js
 <script>
 window.$docsify = {
-  autoFooter: {
-    name:     '',
-    url:      '',
-    copyYear: '',
-    policy:   '',
-    terms:    ''
-  }
+    autoFooter: {
+        name:     '',
+        url:      '',
+        copyYear: '',
+        policy:   '',
+        terms:    ''
+    }
 };
 </script>
 ```
 
-### via npm
-Including it via NPM has one extra step than a normal:
-
-```sh
-npm install @markbattistella/docsify-sidebarfooter@1.1.5 --registry="https://npm.pkg.github.com/"
-```
-
-
-1. Insert script into docsify document:
-```js
-<script src="docsify-sidebarFooter.js"></script>
-```
-
-
-1. If you are using the Privacy Policy and Terms of Service links, then add the two files to the root (next to `index.html`)
-
-	```
-	| docs/
-	|-- _privacy.md
-	|-- _terms.md
-	```
-
-
-1. Add the `<div id="mb-footer"></div>` to the bottom of the `_sidebar.md`. I guess you can add this anywhere, but it's designed for the sidebar.
-
-
-1. Find a couple of online generators to help fill in the data :smiley:
-
-
-
-## Configuration
-There are some options available for the `docsify-autoHeaders`:
+There are some options available for the `docsify-sidebarfooter`:
 
 | setting   | options |
 | :-------- | :------ |
@@ -62,24 +50,40 @@ There are some options available for the `docsify-autoHeaders`:
 | terms		| do you have a Terms of Service page
 
 
-## Usage
-Fill in the data within the configuration, and it will all auto populate.
+### 2. Additional files
+If you are using the Privacy Policy and Terms of Service links, then add the two files to the root (next to `index.html`)
+
+```md
+| docs/
+|-- _privacy.md
+|-- _terms.md
+```
+
+### 3. Usage
+At the bottom of your `_sidebar.md` file add the following code:
+
+```html
+<div id="mb-footer"></div>
+```
+
+You _can_ add this anywhere, but it's designed for the sidebar.
 
 
 ## Example
 ![Example output](images/example.jpg)
 
-# Contributing
-1. Clone the repo:
-`git clone https://github.com/markbattistella/docsify-sidebarFooter.git`
 
-1. Create your feature branch:
+## Contributing
+1. Clone the repo:
+`git clone https://github.com/markbattistella/docsify-autoHeadings.git`
+
+2. Create your feature branch:
 `git checkout -b my-feature`
 
-1. Commit your changes:
+3. Commit your changes:
 `git commit -am 'Add some feature'`
 
-1. Push to the branch:
+4. `Push` to the branch:
 `git push origin my-new-feature`
 
-1. Submit a `pull` request
+5. Submit the `pull` request
