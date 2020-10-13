@@ -4,6 +4,7 @@
 
 This plugin is designed to create a footer area at the base of your sidebar where you can list a copyright year, your name or company with a URL, and links to a privacy policy and terms of service.
 
+
 ## Installation
 
 ### Update `index.html` file
@@ -73,7 +74,7 @@ You _can_ add this anywhere, but it's designed for the sidebar.
 
 ## Example
 
-![Example output](demo/example.jpg)
+Look at the sidebar :grin:
 
 ## Contributing
 

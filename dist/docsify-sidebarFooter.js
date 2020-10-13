@@ -1,3 +1,4 @@
+/*! docsify-sidebarFooter.js v2.0.0 | (c) Mark Battistella */
 'use strict';
 
 function getFooter( footerOptions ) {

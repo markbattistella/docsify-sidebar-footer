@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>docsify: sidebarFooter</title>
+
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="description" content="Auto numbering plugin for Docsify.js">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+	<!-- theme: simple dark -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css">
+</head>
+
+<body>
+
+	<div id="app"></div>
+
+	<script>
+	window.$docsify = {
+		name: 'sidebarFooter',
+		repo: 'https://github.com/markbattistella/docsify-sidebarFooter',
+
+		// cover page doc
+		coverpage: true,
+		homepage: 'home.md',
+
+		// use a TOC sidebar
+		loadSidebar: true,
+
+		// auto scroll to top
+		auto2top: true,
+
+		// load _404.md
+		notFoundPage: true,
+
+		// plugin - autoHeaders
+		autoFooter: {
+          name: 'Mark Battistella',
+          url: 'https://github.com/markbattistella',
+          copyYear: '2010',
+          policy: '1',
+          terms: '1'
+        }
+	}
+	</script>
+
+	<!-- docsify.js -->
+	<script src="https://cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+
+	<!-- docsify-autoHeaders -->
+	<script src="https://cdn.jsdelivr.net/npm/docsify-sidebarfooter@latest"></script>
+
+	<!-- local: docsify-sidebarFooter -->
+	<!-- <script src="docsify-sidebarFooter.js"></script> -->
+
+</body>
+</html>
