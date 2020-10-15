@@ -1,6 +1,6 @@
 # docsify-sidebarfooter
 
-![gh2npm](https://github.com/markbattistella/docsify-sidebarfooter/workflows/gh2npm/badge.svg?event=registry_package) ![npm (tag)](https://img.shields.io/npm/v/docsify-sidebarfooter/latest) ![GitHub](https://img.shields.io/github/license/markbattistella/docsify-sidebarfooter) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/docsify-sidebarfooter)
+![Github2npm](https://github.com/markbattistella/docsify-sidebarfooter/workflows/gh2npm/badge.svg?event=registry_package) ![npm (scoped)](https://img.shields.io/npm/v/@markbattistella/docsify-sidebarfooter) ![GitHub](https://img.shields.io/github/license/markbattistella/docsify-sidebarfooter) ![npm bundle size (scoped)](https://img.shields.io/bundlephobia/minzip/@markbattistella/docsify-sidebarfooter)
 
 This plugin is designed to create a footer area at the base of your sidebar where you can list a copyright year, your name or company with a URL, and links to a privacy policy and terms of service.
 
