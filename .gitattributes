@@ -1,2 +1,9 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+*.js linguist-vendored=true
+*.md linguist-vendored=false
+*.html linguist-vendored=false
+*.css linguist-vendored=false
+*.jpg linguist-vendored=false
+*.gif linguist-vendored=false
+dist/* linguist-vendored
