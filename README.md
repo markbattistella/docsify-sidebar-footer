@@ -14,7 +14,7 @@
 
 ---
 
-This plugin is designed to create a footer area at the base of your sidebar where you can list a copyright year (range), your name or company with a URL, and links to a privacy policy and terms of service.
+This plugin is designed to create a footer area at the base of your sidebar where you can list a copyright year (range), your name or company with a URL, and links to a privacy policy, terms of service, and a cookies policy.
 
 ---
 
@@ -43,11 +43,12 @@ Assuming you have a working [docsify](https://docsify.js.org/) framework set up,
     <script>
     window.$docsify = {
       autoFooter: {
-        name:     '',
-        url:      '',
-        copyYear: '',
-        policy:   '',
-        terms:    ''
+        name:     '',     // company display name (required)
+        url:      '',     // company url (optional)
+        copyYear: '',     // start copyright year (required)
+        policy:   true,   // show Privacy Policy (optional)
+        terms:    true,   // show Terms of Service (optional)
+        cookies:  true    // show Cookies Policy (optional)
       }
     };
     </script>
@@ -70,19 +71,21 @@ If you are using the Privacy Policy and Terms of Service links, then add the two
 |-- index.html
 |-- _privacy.md
 |-- _terms.md
+|-- _cookies.md
 ```
 
 ## Configuration
 
 There are some options available for the `docsify-sidebarfooter`:
 
-| setting   | options |
-| :-------- | :------ |
-| name      | your name or your company - whoever is the owner
-| url       | the url you want the name to link to (optional)
-| copyYear  | the first year of copyright. leave blank for current year
-| policy    | do you have a Privacy Policy page
-| terms     | do you have a Terms of Service page
+| setting   | required | type   | options                                |
+| :-------- | :------: | :----- | :------------------------------------- |
+| name      | Y        | String | your name or your company              |
+| url       | N        | String | the url you want the `name` to link to |
+| copyYear  | Y        | String | the first year of copyright            |
+| policy    | N        | Bool   | do you have a Privacy Policy page      |
+| terms     | N        | Bool   | do you have a Terms of Service page    |
+| cookies   | N        | Bool   | do you have a Cookies Policy page      |
 
 ## Usage
 
@@ -100,9 +103,11 @@ You _can_ add this anywhere, but it's designed for the sidebar.
 
 ## Known issues
 
-At present the sidebar links are relative to the base url, and any sub directories in the address are stripped :disappointed:
+None! :smile:
 
-It's in the [issue list](https://github.com/markbattistella/docsify-sidebarFooter/issues/1#issue-727165896)!
+~At present the sidebar links are relative to the base url, and any sub directories in the address are stripped~
+
+~It's in the [issue list](https://github.com/markbattistella/docsify-sidebarFooter/issues/1#issue-727165896)!~ **Closed**
 
 ## Contributing
 
