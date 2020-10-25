@@ -8,7 +8,7 @@
 
 ---
 
-:sparkles: ![Demo page](https://img.shields.io/badge/demo-@markbattistella/docsify--sidebarfooter-blue?style=for-the-badge) :sparkles:
+:sparkles: ![Demo page](https://img.shields.io/badge/demo-@markbattistella/docsify--sidebarfooter-blue?style=for-the-badge&link=https://markbattistella.github.io/docsify-sidebarFooter/) :sparkles:
 
 </div>
 

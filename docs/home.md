@@ -6,10 +6,6 @@
 
 ![Help donate](https://img.shields.io/badge/%20-@markbattistella-blue?logo=paypal&link=https://www.paypal.me/markbattistella/6AUD) ![Buy me a coffee](https://img.shields.io/badge/%20-buymeacoffee-black?logo=buy-me-a-coffee&link=https://www.buymeacoffee.com/markbattistella)
 
----
-
-:sparkles: ![Demo page](https://img.shields.io/badge/demo-@markbattistella/docsify--sidebarfooter-blue?style=for-the-badge) :sparkles:
-
 </div>
 
 ---
