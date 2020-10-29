@@ -38,7 +38,7 @@ Assuming you have a working [docsify](https://docsify.js.org/) framework set up,
     ```js
     <script>
     window.$docsify = {
-      autoFooter: {
+      footerOptions: {
         name:     '',     // company display name (required)
         url:      '',     // company url (optional)
         copyYear: '',     // start copyright year (required)
