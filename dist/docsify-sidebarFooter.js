@@ -1,4 +1,4 @@
-/*! docsify-sidebarFooter.js v3.1.0 | (c) Mark Battistella */
+/*! docsify-sidebarFooter.js v3.2.0 | (c) Mark Battistella */
 'use strict';
 
 function getFooter( footerOptions ) {
@@ -21,12 +21,12 @@ function getFooter( footerOptions ) {
 									footerOptions.url : null;
 	let copyYear	= footerOptions.copyYear ?
 									footerOptions.copyYear : date;
-	let policy		= footerOptions.policy == true ?
-									true : false;
-	let terms		= footerOptions.terms  == true ?
-									true : false;
-	let cookies		= footerOptions.cookies  == true ?
-									true : false;
+    let policy		= footerOptions.policy ?
+									footerOptions.policy : null;
+	let terms		= footerOptions.terms ?
+									footerOptions.terms : null;
+	let cookies		= footerOptions.cookies ?
+									footerOptions.cookies : null;
 
 	// build the array
 	var outputArray = [ name, url, copyYear, policy, terms, cookies ];
@@ -36,12 +36,12 @@ function getFooter( footerOptions ) {
 
 // defaults - and setup
 const footerOptions = {
-	name:		'',		// required
-	url:		'',		// optional
-	copyYear:	'',		// required
-	policy:		false,	// optional
-	terms:		false,	// optional
-	cookies:	false	// optional
+	name:		'', // required
+	url:		'', // optional
+	copyYear:	'', // required
+	policy:		'', // optional
+	terms:		'', // optional
+	cookies:	''  // optional
 };
 
 
@@ -121,16 +121,36 @@ function autoFooter( hook, vm ) {
 				j = ( arrayUrl === "" ? "</div>" : "</a>" ),
 
 				// policy details
-				k = ( arrayPolicy ?
-						"<a href='" + baseUrl + "_policy'>Policy</a>" : ""),
+                k = ( typeof arrayPolicy === "boolean" ||
+                      typeof arrayPolicy === "string"
+                    ) ?
+                        ( typeof arrayPolicy === "boolean" ?
+                            "<a href='" + baseUrl + "_policy'>Policy</a>"
+                        :
+                            "<a href='" + baseUrl + arrayPolicy + "'>Policy</a>"
+                    ) : "",
 
-				// terms details
-				l = ( arrayTerms ?
-						"<a href='" + baseUrl + "_terms'>Terms</a>" : "" ),
+                // terms details
+                l = ( typeof arrayTerms === "boolean" ||
+                      typeof arrayTerms === "string"
+                    ) ?
+                        ( typeof arrayTerms === "boolean" ?
+                            "<a href='" + baseUrl + "_terms'>Terms</a>"
+                        :
+                            "<a href='" + baseUrl + arrayTerms + "'>Terms</a>"
+                    ) : "",
 
-				// terms details
-				m = ( arrayCookies ?
-						"<a href='" + baseUrl + "_cookies'>Cookies</a>" : "" ),
+
+				// cookies details
+                m = ( typeof arrayCookies === "boolean" ||
+                      typeof arrayCookies === "string"
+                    ) ?
+                        ( typeof arrayTerms === "boolean" ?
+                            "<a href='" + baseUrl + "_cookies'>Cookies</a>"
+                        :
+                            "<a href='" + baseUrl + arrayCookies + "'>Cookies</a>"
+                    ) : "",
+
 
 			n = "</div>";
 
