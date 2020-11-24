@@ -4,11 +4,11 @@
 
 ![Github2npm](https://github.com/markbattistella/docsify-sidebarfooter/workflows/gh2npm/badge.svg?event=registry_package) ![npm (scoped)](https://img.shields.io/npm/v/@markbattistella/docsify-sidebarfooter) ![GitHub](https://img.shields.io/github/license/markbattistella/docsify-sidebarfooter) ![npm bundle size (scoped)](https://img.shields.io/bundlephobia/minzip/@markbattistella/docsify-sidebarfooter)
 
-![Help donate](https://img.shields.io/badge/%20-@markbattistella-blue?logo=paypal&link=https://www.paypal.me/markbattistella/6AUD) ![Buy me a coffee](https://img.shields.io/badge/%20-buymeacoffee-black?logo=buy-me-a-coffee&link=https://www.buymeacoffee.com/markbattistella)
+[![Help donate](https://img.shields.io/badge/%20-@markbattistella-blue?logo=paypal)](https://www.paypal.me/markbattistella/6AUD) [![Buy me a coffee](https://img.shields.io/badge/%20-buymeacoffee-black?logo=buy-me-a-coffee)](https://www.buymeacoffee.com/markbattistella)
 
 ---
 
-:sparkles: ![Demo page](https://img.shields.io/badge/demo-@markbattistella/docsify--sidebarfooter-blue?style=for-the-badge&link=https://markbattistella.github.io/docsify-sidebarFooter/) :sparkles:
+:sparkles: [![Demo page](https://img.shields.io/badge/demo-@markbattistella/docsify--sidebarfooter-blue?style=for-the-badge)](https://markbattistella.github.io/docsify-sidebarFooter/) :sparkles:
 
 </div>
 
@@ -43,12 +43,12 @@ Assuming you have a working [docsify](https://docsify.js.org/) framework set up,
     <script>
     window.$docsify = {
       autoFooter: {
-        name:     '',     // company display name (required)
-        url:      '',     // company url (optional)
-        copyYear: '',     // start copyright year (required)
-        policy:   true,   // show Privacy Policy (optional)
-        terms:    true,   // show Terms of Service (optional)
-        cookies:  true    // show Cookies Policy (optional)
+        name:      String,          // company display name (required)
+        copyYear:  Int,             // start copyright year (required)
+        url:       String,          // company url (optional)
+        policy:    Bool | String,   // show Privacy Policy (optional)
+        terms:     Bool | String,   // show Terms of Service (optional)
+        cookies:   Bool | String    // show Cookies Policy (optional)
       }
     };
     </script>
@@ -78,14 +78,14 @@ If you are using the Privacy Policy and Terms of Service links, then add the two
 
 There are some options available for the `docsify-sidebarfooter`:
 
-| setting   | required | type   | options                                |
-| :-------- | :------: | :----- | :------------------------------------- |
-| name      | Y        | String | your name or your company              |
-| url       | N        | String | the url you want the `name` to link to |
-| copyYear  | Y        | String | the first year of copyright            |
-| policy    | N        | Bool   | do you have a Privacy Policy page      |
-| terms     | N        | Bool   | do you have a Terms of Service page    |
-| cookies   | N        | Bool   | do you have a Cookies Policy page      |
+| setting  | required | type           | options                            |
+|----------|:--------:|----------------|------------------------------------|
+| name     | Y        | String         | your name or company               |
+| copyYear | Y        | String         | first year of copyright            |
+| url      | N        | String         | url you want the `name` to link to |
+| policy   | N        | Bool or String | path to `policy`                   |
+| terms    | N        | Bool or String | path to `terms`                    |
+| cookies  | N        | Bool or String | path to `cookies`                  |
 
 ## Usage
 
