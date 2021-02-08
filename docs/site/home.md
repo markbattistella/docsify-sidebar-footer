@@ -88,7 +88,7 @@ There are some options available for the `docsify-sidebarfooter`:
 | `policy`   | N        | Bool or String | path to `policy`                   |
 | `terms`    | N        | Bool or String | path to `terms`                    |
 | `cookies`  | N        | Bool or String | path to `cookies`                  |
-| `onBody` | N      | Bool           | display in the body not sidebar    |
+| `onBody`   | N        | Bool           | display in the body not sidebar    |
 
 ## Usage
 
