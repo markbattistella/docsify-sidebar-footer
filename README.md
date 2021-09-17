@@ -9,7 +9,7 @@
 [![](https://img.shields.io/badge/%20-@markbattistella-blue?logo=paypal&style=for-the-badge)](https://www.paypal.me/markbattistella/6AUD)
 [![](https://img.shields.io/badge/%20-buymeacoffee-black?logo=buy-me-a-coffee&style=for-the-badge)](https://www.buymeacoffee.com/markbattistella)
 
-[![](https://img.shields.io/badge/demo-@markbattistella/docsify--sidebarfooter-1E5749?style=for-the-badge)](https://markbattistella.github.io/docsify-sidebarfooter/)
+[![](https://img.shields.io/badge/demo-@markbattistella/docsify--sidebarfooter-1E5749?style=for-the-badge)](https://markbattistella.github.io/docsify-sidebarFooter-docs/)
 
 </div>
 
@@ -100,20 +100,8 @@ At the bottom of your `_sidebar.md` file add the following code:
 
 ## Contributing
 
-1. Clone the repo:
-
-    `git clone https://github.com/markbattistella/docsify-sidebarFooter.git`
-
-2. Create your feature branch:
-
-    `git checkout -b my-feature`
-
-3. Commit your changes:
-
-    `git commit -am 'Add some feature'`
-
-4. `Push` to the branch:
-
-    `git push origin my-new-feature`
-
+1. Clone the repo:<br>`git clone https://github.com/markbattistella/docsify-sidebarFooter.git`
+2. Create your feature branch:<br>`git checkout -b my-feature`
+3. Commit your changes:<br>`git commit -am 'Add some feature'`
+4. `Push` to the branch:<br>`git push origin my-new-feature`
 5. Submit the `pull` request
