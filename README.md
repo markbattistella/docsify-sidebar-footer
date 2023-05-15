@@ -1,23 +1,6 @@
-<div align="center">
+# docsify.js sidebar footer
 
-# docsify-sidebarfooter
-
-![Github2npm](https://github.com/markbattistella/docsify-sidebarfooter/workflows/gh2npm/badge.svg?event=registry_package) ![npm (scoped)](https://img.shields.io/npm/v/@markbattistella/docsify-sidebarfooter) ![GitHub](https://img.shields.io/github/license/markbattistella/docsify-sidebarfooter) ![npm bundle size (scoped)](https://img.shields.io/bundlephobia/minzip/@markbattistella/docsify-sidebarfooter)
-
----
-
-[![](https://img.shields.io/badge/%20-@markbattistella-blue?logo=paypal&style=for-the-badge)](https://www.paypal.me/markbattistella/6AUD)
-[![](https://img.shields.io/badge/%20-buymeacoffee-black?logo=buy-me-a-coffee&style=for-the-badge)](https://www.buymeacoffee.com/markbattistella)
-
-[![](https://img.shields.io/badge/demo-@markbattistella/docsify--sidebarfooter-1E5749?style=for-the-badge)](https://markbattistella.github.io/docsify-sidebarFooter-docs/)
-
-</div>
-
----
-
-This plugin is designed to create a footer area at the base of your sidebar (or page) where you can list a copyright year (range), your name or company with a URL, and links to a privacy policy, terms of service, and a cookies policy.
-
----
+This plugin enhances your website's sidebar or page by creating a footer area where you can display important information. It automatically updates the copyright year or range, allows you to include your name or company with a URL, and provides links to a privacy policy, terms of service, and cookies policy pages. By utilising this plugin, you can easily showcase relevant legal information, personalise your website, and promote transparency and compliance.
 
 ## Installation
 
@@ -25,7 +8,7 @@ This plugin is designed to create a footer area at the base of your sidebar (or 
 
 Assuming you have a working [docsify](https://docsify.js.org/) framework set up, it is easy to use the plugin.
 
-1. Add the following script tag to your `index.html` via either CDN or downloading it and using it locally:
+1. Add one of the following script tags to your `index.html` via either CDN or downloading it and using it locally:
 
     ```html
     <!-- unpkg.com -->
@@ -35,7 +18,7 @@ Assuming you have a working [docsify](https://docsify.js.org/) framework set up,
     <script src="https://cdn.jsdelivr.net/npm/@markbattistella/docsify-sidebarfooter@latest"></script>
 
     <!-- locally -->
-    <script src="docsify-sidebarfooter.min.js"></script>
+    <script src="docsify-sidebar.min.js"></script>
     ```
 
 1. In docsify setup configure the plugin:
@@ -44,58 +27,147 @@ Assuming you have a working [docsify](https://docsify.js.org/) framework set up,
     <script>
     window.$docsify = {
       autoFooter: {
-        name:       String,          // company display name (required)
-        copyYear:   Int,             // start copyright year (required)
-        url:        String,          // company url (optional)
-        policy:     Bool | String,   // show Privacy Policy (optional)
-        terms:      Bool | String,   // show Terms of Service (optional)
-        cookies:    Bool | String,   // show Cookies Policy (optional)
-        onBody:     Bool             // if true it is on the main doc
+
+        // the name you wish to display as the copyright holder
+        name:        String,
+
+        // the URL (personal or company) which clicking the `name` goes to
+        url:         String,
+
+        // the start year of copyright
+        copyYear:    String,
+
+        // show the privacy policy link
+        policy:      Bool | String,
+
+        // show the terms of service link
+        terms:       Bool | String,
+
+        // show the cookies policy link
+        cookies:     Bool | String,
+
+        // use your own css styles or the built in ones
+        customStyle: Bool | String
       }
     };
     </script>
     ```
 
-### npm install
-
-Or if you're using `npm` to manage your dependencies:
-
-```sh
-npm i @markbattistella/docsify-sidebarfooter
-```
-
 ### Additional files
 
-If you are using the Privacy Policy, Terms of Service, or Cookie links, then add the files to the root (next to `index.html`). However, if you inputted strings make sure they are in the location of that path with the correct filename.
+#### Default
+
+If you set the `policy`, `terms`, or `cookies` options to `true` the URL links for those pages will look for the markdown files directly next to the `index.html` file:
+
+```js
+// ... other config
+policy: true,
+terms: true,
+cookies: true,
+// ... other config
+```
 
 ```md
-| docs/                      | docs/
-|-- index.html               |-- site/
-|-- _privacy.md              |---- privacy.md
-|-- _terms.md                |---- terms.md
-|-- _cookies.md              |---- cookies.md
+- index.html      --> https://your-awesome-site.com/#/
+- _policy.md      --> https://your-awesome-site.com/#/_policy
+- _terms.md       --> https://your-awesome-site.com/#/_terms
+- _cookies.md     --> https://your-awesome-site.com/#/_cookies
 ```
+
+#### Sub-folder
+
+However, if you enter a string it will append that to the base URL of your website:
+
+```js
+// ... other config
+policy: 'site/policy',
+terms: 'site/terms',
+cookies: 'site/cookies',
+// ... other config
+```
+
+```md
+- index.html      --> https://your-awesome-site.com/#/
+- site/
+  \__ policy.md   --> https://your-awesome-site.com/#/site/policy
+  \__ terms.md    --> https://your-awesome-site.com/#/site/terms
+  \__ cookies.md  --> https://your-awesome-site.com/#/site/cookies
+```
+
+#### External links
+
+If you host your policy, terms, or cookies messages on an external website (or need to link to a parent company policy) you can add them in as the full URL:
+
+```js
+// ... other config
+policy: "https://my-other-website.com/policy",
+terms: "https://my-other-website.com/terms",
+cookies: "https://my-other-website.com/cookies",
+// ... other config
+```
+
+These will open those pages in a new tab directly.
 
 ## Configuration
 
 There are some options available for the `docsify-sidebarfooter`:
 
-| setting    | required | type           | options                            |
-|------------|:--------:|----------------|------------------------------------|
-| `name`     | Y        | String         | your name or company               |
-| `copyYear` | Y        | String         | first year of copyright            |
-| `url`      | N        | String         | url you want the `name` to link to |
-| `policy`   | N        | Bool or String | path to `policy`                   |
-| `terms`    | N        | Bool or String | path to `terms`                    |
-| `cookies`  | N        | Bool or String | path to `cookies`                  |
-| `onBody` | N      | Bool           | display in the body not sidebar    |
+| Setting       | Type           | Options                            |
+|---------------|----------------|------------------------------------|
+| `name`        | String         | your name or company               |
+| `url`         | String         | url you want the `name` to link to |
+| `copyYear`    | String         | first year of copyright            |
+| `policy`      | Bool or String | - `false` hides it from the site<br/>- `true` defaults to `_policy.md`<br/>- a custom string will direct to that |
+| `terms`       | Bool or String | - `false` hides it from the site<br/>- `true` defaults to `_terms.md`<br/>- a custom string will direct to that |
+| `cookies`     | Bool or String | - `false` hides it from the site<br/>- `true` defaults to `_cookies.md`<br/>- a custom string will direct to that |
+| `customStyle` | Bool or String | - `false` uses in-built css (sidebar styled)<br/>- `true` applies no styles, you can create your own<br/>- `sidebar` uses the in-built css designed for the sidebar<br/>- `body` uses the in-built css designed for the body |
 
 ## Usage
+
+### Sidebar
 
 At the bottom of your `_sidebar.md` file add the following code:
 
 ```html
 <footer id="mb-footer"></footer>
+```
+
+### Body
+
+Under the `<div id="app"></div>` in your `index.html` file, add the following code:
+
+```html
+<footer id="mb-footer"></footer>
+```
+
+## Styling
+
+The links container is sectioned into different classes for you to customise as much (or little) as you wish.
+
+```html
+<footer id="mb-footer">
+  <div class="footer-container">
+    <div class="footer-text">
+      <span class="footer-text-copyright">
+        Copyright © YYYY-YYYY
+      </span>
+      <span class="footer-text-author">
+        <a target="_blank" href="">Your website name</a>
+      </span>
+    </div>
+    <div class="footer-link">
+      <span class="footer-links-policy">
+        <a href="">Policy</a>
+      </span>
+      <span class="footer-links-terms">
+        <a href="">Terms</a>
+      </span>
+      <span class="footer-links-cookies">
+        <a href="">Cookies</a>
+      </span>
+    </div>
+  </div>
+</footer>
 ```
 
 ## Contributing
