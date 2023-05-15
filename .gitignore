@@ -1,6 +1,5 @@
 # ignore these please
 .DS_Store
 .markdownlintrc
-docs/docsify-sidebarFooter.js
-.markdownlintrc
 .vscode
+!dist
