@@ -1,4 +1,8 @@
+<div align="center">
+
 # docsify.js sidebar footer
+
+</div>
 
 This plugin enhances your website's sidebar or page by creating a footer area where you can display important information. It automatically updates the copyright year or range, allows you to include your name or company with a URL, and provides links to a privacy policy, terms of service, and cookies policy pages. By utilising this plugin, you can easily showcase relevant legal information, personalise your website, and promote transparency and compliance.
 
