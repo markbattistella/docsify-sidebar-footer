@@ -6,8 +6,6 @@ This plugin enhances your website's sidebar or page by creating a footer area wh
 
 ### Update `index.html` file
 
-!> Some of the configurations items have changed in `v5.x` please take note
-
 Assuming you have a working [docsify](https://docsify.js.org/) framework set up, it is easy to use the plugin.
 
 1. Add one of the following script tags to your `index.html` via either CDN or downloading it and using it locally:

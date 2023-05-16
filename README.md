@@ -1,1 +1,0 @@
-/Users/markbattistella/Developer/docsify-sidebar-footer/docs/README.md
