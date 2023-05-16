@@ -1,5 +1,7 @@
-# ignore these please
 .DS_Store
 .markdownlintrc
 .vscode
-!dist
+*.min.js
+!docs/dist
+!docs/dist/*.min.js
+*.babel.js

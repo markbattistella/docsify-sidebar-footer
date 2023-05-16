@@ -1,6 +1,6 @@
-# ignore these please
-.git
-.github
 .DS_Store
 .markdownlintrc
 .vscode
+!dist
+docs
+*babel.js

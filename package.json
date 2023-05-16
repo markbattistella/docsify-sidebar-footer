@@ -1,13 +1,32 @@
 {
 	"name": "@markbattistella/docsify-sidebarfooter",
-	"version": "5.0.1",
+	"version": "5.0.2",
 	"description": "Add a footer notice for Docsify.js",
 	"main": "./dist/docsify-sidebar.min.js",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/markbattistella/docsify-sidebarFooter.git"
+		"url": "git+https://github.com/markbattistella/docsify-sidebar-footer.git"
 	},
-	"scripts": {},
+	"scripts": {
+		"launch": "docsify serve ./docs -o",
+		"update": "ncu -u && npm update && npm install",
+		"babel": "npx babel ./docs/dist/docsify-sidebar.js -o ./docs/dist/docsify-sidebar.babel.js",
+		"uglify": "uglifyjs ./docs/dist/docsify-sidebar.babel.js --verbose -c -m -o ./docs/dist/docsify-sidebar.min.js",
+		"duplicate": "cp ./docs/dist/docsify-sidebar.min.js ./dist/docsify-sidebar.min.js",
+		"minify": "npm run babel && npm run uglify && npm run duplicate",
+		"release": "npm publish"
+	},
+	"devDependencies": {
+		"docsify-cli": "^4.4.4",
+		"@babel/cli": "^7.21.5",
+		"@babel/core": "^7.21.8",
+		"@babel/preset-env": "^7.21.5"
+	},
+	"babel": {
+		"presets": [
+			"@babel/env"
+		]
+	},
 	"unpkg": "./dist/docsify-sidebar.min.js",
 	"jsdelivr": "./dist/docsify-sidebar.min.js",
 	"keywords": [
