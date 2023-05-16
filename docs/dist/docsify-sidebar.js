@@ -1,4 +1,4 @@
-/*! docsify-sidebar.js v5.0.2 | (c) Mark Battistella */
+/*! docsify-sidebar.js v5.0.3 | (c) Mark Battistella */
 'use strict';
 
 // MARK: - check if object exists and is not empty

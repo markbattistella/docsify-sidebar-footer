@@ -1,6 +1,6 @@
 {
 	"name": "@markbattistella/docsify-sidebarfooter",
-	"version": "5.0.2",
+	"version": "5.0.3",
 	"description": "Add a footer notice for Docsify.js",
 	"main": "./dist/docsify-sidebar.min.js",
 	"repository": {

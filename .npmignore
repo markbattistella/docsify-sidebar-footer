@@ -4,3 +4,4 @@
 !dist
 docs
 *babel.js
+!docs/README.md
