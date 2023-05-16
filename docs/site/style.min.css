@@ -139,6 +139,10 @@ article#main {
     color: hsl( var( --colour-mono ), calc( 100% - var( --mono ) ) ) !important;
 }
 
+.markdown-section p.tip code {
+    --mono: 90%;
+}
+
 .markdown-section table {
     --mono: 95%;
     display: table;

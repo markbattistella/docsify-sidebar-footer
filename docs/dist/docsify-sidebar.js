@@ -1,4 +1,4 @@
-/*! docsify-sidebar.js v5.0.3 | (c) Mark Battistella */
+/*! docsify-sidebar.js v5.0.4 | (c) Mark Battistella */
 'use strict';
 
 // MARK: - check if object exists and is not empty
@@ -13,24 +13,24 @@ function doesObjectExists(obj) {
 
 
 // MARK: - update the `options` object
-function getFooter(options) {
+function getFooter(footerOptions) {
 
 	// -- get this year
 	let date = new Date().getFullYear();
 
 	// -- update the variables
-	options.name ? options.name : null;
-	options.url ? options.url : null;
-	options.copyYear ? options.copyYear : date;
-	options.policy ? options.policy : false;
-	options.terms ? options.terms : false;
-	options.cookies ? options.cookies : false;
-	options.customStyle ? options.customStyle : false;
+	footerOptions.name ? footerOptions.name : null;
+	footerOptions.url ? footerOptions.url : null;
+	footerOptions.copyYear ? footerOptions.copyYear : date;
+	footerOptions.policy ? footerOptions.policy : false;
+	footerOptions.terms ? footerOptions.terms : false;
+	footerOptions.cookies ? footerOptions.cookies : false;
+	footerOptions.customStyle ? footerOptions.customStyle : false;
 }
 
 
-// defaults - and setup
-const options = {
+// -- defaults
+const footerOptions = {
 	name:        '',
 	url:         '',
 	copyYear:    '',
@@ -38,6 +38,19 @@ const options = {
 	terms:       true,
 	cookies:     true,
 	customStyle: false
+},
+
+// -- errors
+footerError = {
+
+	// -- error: when something that shouldn't happen, happens
+	unknownError: 'ERROR: sidebar-footer plugin - unknown error',
+
+    // -- error: configuration not set
+    configNotSet: `ERROR: sidebar-footer plugin - configuration not set\n\t\t>> this happens when the autoFooter is not found in the index.html file`,
+
+    // -- error: configuration is empty object
+    configIsEmpty: `ERROR: sidebar-footer plugin - configuration is empty\n\t\t>> please consult the documentation for the settings needed`
 };
 
 
@@ -48,14 +61,14 @@ function autoFooter(hook, vm) {
 	hook.init(function () {
 
 		// -- initialise the options
-		getFooter(options);
+		getFooter(footerOptions);
 
 
 		// -- check the options for bool or string
-		if (typeof options.customStyle === "boolean" || typeof options.customStyle === "string") {
+		if (typeof footerOptions.customStyle === "boolean" || typeof footerOptions.customStyle === "string") {
 
 			// -- dont continue if using custom styles
-			if ((typeof options.customStyle === "boolean" && options.customStyle === true)) {
+			if ((typeof footerOptions.customStyle === "boolean" && footerOptions.customStyle === true)) {
 				return;
 			}
 
@@ -63,14 +76,14 @@ function autoFooter(hook, vm) {
 			let style = `#mb-footer { border-top: 1px solid; font-size: 0.8em; line-height: 1.5; transition: all var(--sidebar-transition-duration) ease-out; }`;
 
 			// -- custom style for sidebar
-			if ((typeof options.customStyle === "boolean" && options.customStyle === false) ||
-				(options.customStyle === "sidebar")
+			if ((typeof footerOptions.customStyle === "boolean" && footerOptions.customStyle === false) ||
+				(footerOptions.customStyle === "sidebar")
 			) {
 				style += `#mb-footer { padding-top: 1.5rem; margin-top: 1.5rem; } #mb-footer .footer-text, #mb-footer .footer-text a { font-weight: bold; }`;
 			}
 
 			// -- custom style for sidebar
-			if (options.customStyle === "body") {
+			if (footerOptions.customStyle === "body") {
 				
 				// --> if there is a sidebar
 				if( $docsify.loadSidebar || $docsify.loadSidebar === null || !$docsify.hideSidebar ) {
@@ -173,17 +186,17 @@ function autoFooter(hook, vm) {
 			// -- text
 			copyright = (
 				`<span class="footer-text-copyright">Copyright &copy; ${
-					options.copyYear && options.copyYear <= date
-						? `${options.copyYear}${options.copyYear < date ? "&#45;" + date : ""}`
+					footerOptions.copyYear && footerOptions.copyYear <= date
+						? `${footerOptions.copyYear}${footerOptions.copyYear < date ? "&#45;" + date : ""}`
 						: date
 				}</span>`
 			),
-			author = createLink( options.url, options.name, '', 'footer-text-author'),
+			author = createLink( footerOptions.url, footerOptions.name, '', 'footer-text-author'),
 
 			// -- links
-			policyURL = createLink(options.policy, 'Policy', '_policy', 'footer-links-policy'),
-			termsURL = createLink(options.terms, 'Terms', '_terms', 'footer-links-terms' ),
-			cookiesURL = createLink(options.cookies, 'Cookies', '_cookies', 'footer-links-cookies'),
+			policyURL = createLink(footerOptions.policy, 'Policy', '_policy', 'footer-links-policy'),
+			termsURL = createLink(footerOptions.terms, 'Terms', '_terms', 'footer-links-terms' ),
+			cookiesURL = createLink(footerOptions.cookies, 'Cookies', '_cookies', 'footer-links-cookies'),
 
 			// output
 			output = (
@@ -199,22 +212,27 @@ function autoFooter(hook, vm) {
 
 
 // MARK: - check options is defined and not empty
-if (typeof options !== 'undefined' && doesObjectExists(options)) {
+if (typeof footerOptions !== 'undefined' && doesObjectExists(footerOptions)) {
 
 	// -- find footer plugin options
 	window.$docsify.autoFooter = Object.assign(
-		options,
+		footerOptions,
 		window.$docsify.autoFooter
 	);
 	window.$docsify.plugins = [].concat(autoFooter, window.$docsify.plugins);
 
 } else {
 
-	// -- log the error
-	console.error(
-		"ERROR: sidebar-footer configuration not set" + "\n" +
-		"This error appears when:" + "\n" +
-		"  - the `autoSidebar` not found index.html file" + "\n" +
-		"  - the `autoSidebar` is empty"
-	);
+    // --> config not set in `index.html`
+    if (typeof headerOptions === 'undefined') {
+        throw footerError.configNotSet
+    }
+
+    // --> config is empty object
+    if (!doesObjectExists(headerOptions)) {
+        throw footerError.configNotSet
+    }
+
+    // --> some other error
+    throw footerError.unknownError;
 }
