@@ -1,7 +1,7 @@
-.DS_Store
-.markdownlintrc
 .vscode
+.markdownlint.json
+.DS_Store
+*babel.js
 *.min.js
 !docs/dist
 !docs/dist/*.min.js
-*.babel.js

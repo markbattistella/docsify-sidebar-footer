@@ -1,7 +1,7 @@
-.DS_Store
-.markdownlintrc
 .vscode
-!dist
-docs
+.markdownlint.json
+.github
+.gitattributes
+.DS_Store
 *babel.js
-!docs/README.md
+docs
