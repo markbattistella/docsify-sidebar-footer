@@ -4,3 +4,4 @@
 *babel.js
 *.min.js
 .gitattributes
+node_modules
