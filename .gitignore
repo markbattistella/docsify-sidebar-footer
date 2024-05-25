@@ -3,5 +3,4 @@
 .DS_Store
 *babel.js
 *.min.js
-!docs/dist
-!docs/dist/*.min.js
+.gitattributes

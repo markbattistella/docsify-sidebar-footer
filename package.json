@@ -1,6 +1,6 @@
 {
   "name": "@markbattistella/docsify-sidebarfooter",
-  "version": "5.0.6",
+  "version": "5.0.7",
   "description": "Add a footer notice for Docsify.js",
   "main": "./dist/docsify-sidebar.min.js",
   "repository": {
@@ -12,9 +12,7 @@
     "update": "ncu -u && npm update && npm install",
     "babel": "npx babel ./docs/dist/docsify-sidebar.js -o ./docs/dist/docsify-sidebar.babel.js",
     "uglify": "uglifyjs ./docs/dist/docsify-sidebar.babel.js --verbose -c -m -o ./docs/dist/docsify-sidebar.min.js",
-    "dupeJS": "mkdir -p ./dist/ && cp ./docs/dist/docsify-sidebar.min.js ./dist/docsify-sidebar.min.js",
-    "dupeRM": "cp ./docs/README.md ./README.md",
-    "minify": "npm run babel && npm run uglify && npm run dupeJS && npm run dupeRM",
+    "minify": "npm run babel && npm run uglify",
     "patch": "node ./.github/scripts/release.js -patch",
     "minor": "node ./.github/scripts/release.js -minor",
     "major": "node ./.github/scripts/release.js -major"

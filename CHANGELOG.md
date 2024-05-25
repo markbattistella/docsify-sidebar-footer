@@ -1,3 +1,8 @@
+## 5.0.7 - Sat May 25 2024
+
+### Fixed
+
+- Documentation cleanup
 
 ## 5.0.6 - Mon May 22 2023
 
